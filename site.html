@@ -12,7 +12,7 @@
 
 <span style="color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: .5px;">CRES<sup>2</sup>T</span>
 <div style="display: flex; gap: 3px; flex-wrap: wrap; align-items: center;">
-<a style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;" href="#mission">Mission</a>
+<a style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;" data-spa href="/mission">Mission</a>
 <a style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;" href="#questions">Research</a>
 <a style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;" href="#team">Team</a>
 <a style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;" href="#facilities">Facilities</a>
@@ -510,3 +510,74 @@ Currently in the <strong>Planning Grant</strong> phase. We need ~50 potential IA
 <div style="font-size: .75rem; color: rgba(255,255,255,.35);">Penn State · Purdue · Texas A&amp;M · NSF IUCRC</div>
 </div>
 </footer></div>
+        <!-- FOOTER -->
+        <footer style="background: #0a1628; padding: 32px 0; text-align: center;">
+            <div class="inn">
+                <div style="font-size: 1.2rem; font-weight: 900; color: #fff; margin-bottom: 8px;">CRES<sup style="color: #29b6f6;">2</sup>T</div>
+                <div style="font-size: .78rem; color: rgba(255,255,255,.5); margin-bottom: 12px;">Center for Research in Emerging Sustainable Space Technologies</div>
+                <div style="font-size: .75rem; color: rgba(255,255,255,.35);">Penn State · Purdue · Texas A&amp;M · NSF IUCRC</div>
+            </div>
+        </footer>
+
+    </div> <!-- end #cw -->
+
+    <!-- 👇 SPA SCRIPT GOES HERE 👇 -->
+    <script>
+        (function() {
+            // Intercept clicks on links with data-spa
+            document.addEventListener('click', function(e) {
+                const link = e.target.closest('a[data-spa]');
+                if (!link) return;
+
+                const url = link.getAttribute('href');
+                if (!url || url.startsWith('#') || url.startsWith('http')) return;
+
+                e.preventDefault();
+                navigateTo(url);
+            });
+
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                navigateTo(window.location.pathname, true);
+            });
+
+            function navigateTo(url, isPopState = false) {
+                const container = document.getElementById('cw');
+                container.style.opacity = '0.5';
+
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) throw new Error('Page not found');
+                        return response.text();
+                    })
+                    .then(html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html');
+                        const newContent = doc.getElementById('cw');
+
+                        if (newContent) {
+                            container.innerHTML = newContent.innerHTML;
+                        } else {
+                            // Fallback: if no #cw, use the whole body
+                            container.innerHTML = doc.body.innerHTML;
+                        }
+
+                        if (!isPopState) {
+                            window.history.pushState({}, '', url);
+                        }
+
+                        container.style.opacity = '1';
+                        // Scroll to top when navigating
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    })
+                    .catch(err => {
+                        console.error('Navigation failed:', err);
+                        container.innerHTML = `<p style="padding:40px;text-align:center;color:red;">Failed to load page. <a href="${url}">Refresh to try again</a>.</p>`;
+                        container.style.opacity = '1';
+                    });
+            }
+        })();
+    </script>
+
+</body>
+</html>

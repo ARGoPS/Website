@@ -1,1 +1,88 @@
 
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.126.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.126.0/examples/jsm/"
+        }
+    }
+</script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<div id="cw">
+    <section id="projects" style="padding: 68px 0; background: #f5f8ff;">
+        <div class="inn">
+            <div class="sh">
+                <div class="eye">Research Examples</div>
+                <h2>Sample Research Projects</h2>
+                <p>These representative projects illustrate the type of industry-relevant research CRES²T will pursue. Members help shape the actual research agenda.</p>
+            </div>
+
+            <!-- ===== 3D MODEL VIEWER ===== -->
+            <div style="background: #fff; border-radius: 16px; padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 20px rgba(0,0,0,.08);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                    <h3 style="font-size: 1.2rem; font-weight: 800; color: #0d2366;">🚀 Interactive 3D Model</h3>
+                    <span style="font-size: .78rem; color: #666; background: #f0f4ff; padding: 4px 14px; border-radius: 20px;">Drag to rotate · Scroll to zoom</span>
+                </div>
+
+                <model-viewer 
+                    src="Images/Frame v7.usdz"
+                    alt="3D Spacecraft Model"
+                    style="width: 100%; height: 450px; background: radial-gradient(circle at center, #e8f0fe 0%, #c5d8f5 100%); border-radius: 12px;"
+                    camera-controls
+                    auto-rotate
+                    auto-rotate-delay="0"
+                    rotation-per-second="15deg"
+                    camera-orbit="0deg 75deg 4m"
+                    shadow-intensity="0.8"
+                    exposure="1.2"
+                >
+                    <!-- Optional: Add a poster/loading image -->
+                    <div slot="poster" style="display: flex; align-items: center; justify-content: center; height: 100%; color: #0d2366; font-weight: 600; font-size: 1.1rem; background: radial-gradient(circle at center, #e8f0fe 0%, #c5d8f5 100%);">
+                        <span>🛰️ Loading 3D Model...</span>
+                    </div>
+                </model-viewer>
+
+                <div style="display: flex; gap: 12px; margin-top: 14px; flex-wrap: wrap;">
+                    <button onclick="document.querySelector('model-viewer').autoRotate = !document.querySelector('model-viewer').autoRotate" style="background: #0d2366; color: #fff; border: none; padding: 6px 16px; border-radius: 6px; font-size: .8rem; cursor: pointer;">
+                        ⏸️ Toggle Rotation
+                    </button>
+                    <button onclick="document.querySelector('model-viewer').cameraOrbit = '0deg 0deg 4m'" style="background: #e8f0fe; color: #0d2366; border: 1px solid #0d2366; padding: 6px 16px; border-radius: 6px; font-size: .8rem; cursor: pointer;">
+                        🔄 Reset View
+                    </button>
+                    <button onclick="document.querySelector('model-viewor').enterFullscreen()" style="background: #29b6f6; color: #fff; border: none; padding: 6px 16px; border-radius: 6px; font-size: .8rem; cursor: pointer;">
+                        ⛶ Fullscreen
+                    </button>
+                </div>
+            </div>
+
+            <!-- ===== SAMPLE PROJECTS (from original) ===== -->
+            <details>
+                <summary>Safe Spacecraft Rendezvous &amp; Proximity Operations — Penn State · Purdue · Texas A&amp;M</summary>
+                <div class="db">
+                    <strong>Challenge:</strong> RPO missions are executed in increasingly complex, congested, and competitive environments. Spacecraft have limited maneuverability based on orbit, fuel, thrusters, and mission requirements.<br><br>
+                    <strong>Objective:</strong> Investigate computational methods enabling on-board, autonomous RPOs with collision avoidance techniques. Demonstrate efficacy via hardware-in-the-loop (HIL) experiments.<br><br>
+                    <strong>Member Benefits:</strong> High-fidelity, computationally efficient guidance and navigation laws for autonomous safe space operations, plus well-trained graduate researchers available for internships.
+                </div>
+            </details>
+
+            <details>
+                <summary>Active Tendons for Controlled Dimensional Stability — Penn State · Texas A&amp;M</summary>
+                <div class="db">
+                    <strong>Challenge:</strong> In-Space Assembly and Manufacturing (ISAM) is needed for future large-aperture (≥15m) missions that cannot be launched in a single mission. Enabling concepts include additive manufacturing, modularity, and robotics.<br><br>
+                    <strong>Objective:</strong> Advance tendon actuation for precision shape maintenance and control of large tensegrity apertures and robots. Builds on DARPA Compact Hybrid Actuation Program research. Texas A&amp;M LASR lab will test deployment.<br><br>
+                    <strong>Member Benefits:</strong> Access to developed motor, metrology, and cable-management technology, plus talented graduate researchers.
+                </div>
+            </details>
+
+            <details>
+                <summary>In-Space Refueling of High-Performance Storable Propellants — Purdue</summary>
+                <div class="db">
+                    <strong>Challenge:</strong> Spacecraft in cislunar space face harsh thermal environments. MMH/NTO systems are preferred for high-ΔV missions, but cryogenic propellants (LO₂/LCH₄) require expensive active cooling for long missions.<br><br>
+                    <strong>Objective:</strong> Offer an alternative using gaseous oxygen and kerosene with chemical oxygen generators for refueling — simpler than cryogenic, higher performance than traditional storables.<br><br>
+                    <strong>Member Benefits:</strong> Early involvement in technology development with ability to provide design guidelines fitting existing or planned spacecraft.
+                </div>
+            </details>
+        </div>
+    </section>
+</div>

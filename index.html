@@ -5,166 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRES²T – Center for Research in Emerging Sustainable Space Technologies</title>
     <style>
-        :root {
-            --psu-color: #0d2366;
-            --purdue-color: #4a2100;
-            --tamu-color: #4a0000;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; }
-        .inn { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    
-        nav {
-            background: #0d2366;
-            box-shadow: 0 2px 8px rgba(0,0,0,.35);
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
 
-        footer {
-            background: #0a1628;
-            padding: 32px 0;
-            text-align: center;
-        }
-        #cw {
-            background: #fff;
-
-        }
-
-                /* ---------- TABLE STYLES ---------- */
-        .table-wrap {
-            overflow-x: auto;
-            border-radius: 16px;
-            border: 1px solid #dce3ed;
-            background: #ffffff;
-            box-shadow: 0 8px 32px rgba(13, 35, 102, 0.10);
-            transition: box-shadow 0.2s ease;
-        }
-        
-        .table-wrap:hover {
-            box-shadow: 0 12px 48px rgba(13, 35, 102, 0.15);
-        }
-        
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: .95rem;
-            min-width: 600px;
-        }
-        
-        .data-table thead {
-            background: linear-gradient(135deg, #0d2366 0%, #1a3a7c 100%);
-        }
-        
-        .data-table th {
-            padding: 20px 24px;
-            text-align: left;
-            font-weight: 700;
-            font-size: .78rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #ffffff;
-            border-bottom: none;
-        }
-        
-        .data-table td {
-            padding: 18px 24px;
-            border-bottom: 1px solid #eef2f8;
-            color: #1a1a2e;
-            vertical-align: middle;
-        }
-        
-        .data-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .data-table tbody tr:nth-child(even) {
-            background: #f8faff;
-        }
-        
-        .data-table tbody tr:hover {
-            background: #eaf0f9;
-            transition: background 0.15s ease;
-        }
-        
-        .school-tag {
-            display: inline-block;
-            padding: 5px 16px;
-            border-radius: 30px;
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-            color: #fff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-        }
-
-        .school-tag.psu { background: #0d2366; }
-        .school-tag.purdue { background: #4a2100; }
-        .school-tag.tamu { background: #4a0000; }
-        
-        .student-name {
-            font-weight: 700;
-            color: #0d2366;
-            font-size: 1rem;
-        }
-        
-        .advisor-name {
-            color: #2c3e50;
-            font-weight: 500;
-        }
-        
-        .research-topic {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: #1e2a3a;
-        }
-        
-        .research-topic .icon {
-            font-size: 1.1rem;
-        }
-        
-        .research-topic .text {
-            font-style: italic;
-        }
-        
-        .status-badge {
-            display: inline-block;
-            padding: 3px 12px;
-            border-radius: 30px;
-            font-size: .72rem;
-            font-weight: 700;
-            background: #e0f2e0;
-            color: #1e7a2b;
-        }
-        
-        .status-badge.ongoing { background: #e3f0ff; color: #0d47a1; }
-        .status-badge.completed { background: #e8f5e9; color: #2e7d32; }
-        .status-badge.pending { background: #fff3e0; color: #e65100; }
-
-        .table-wrap {
-            overflow: hidden;
-            box-sizing: border-box;
-        }
-
-        .table-wrap .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            box-sizing: border-box;
-        }
-
-        .table-wrap .data-table th,
-        .table-wrap .data-table td {
-            box-sizing: border-box;
-            padding: 12px 20px;
-        }
-
-        /* Optional: Remove any extra spacing */
-        .table-wrap .data-table tbody tr td:last-child,
-        .table-wrap .data-table thead tr th:last-child {
-            padding-right: 20px;
-        }
 
         /* ModelViewer styling */
         model-viewer {
@@ -183,25 +24,38 @@
             border-radius: 2px;
         }
     </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div class="inn" style="display: flex; align-items: center; justify-content: space-between; height: 56px; flex-wrap: wrap; gap: 8px;">
-            <a data-spa href="index.html" style="color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: .5px; text-decoration: none;">
-                CRES<sup>2</sup>T
-            </a>
-            <div style="display: flex; gap: 3px; flex-wrap: wrap; align-items: center;">
-                <a data-spa href="mission.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Mission</a>
-                <a data-spa href="research.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Research</a>
-                <a data-spa href="team.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Team</a>
-                <a data-spa href="facilities.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Facilities</a>
-                <a data-spa href="benefits.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Benefits</a>
-                <a data-spa href="projects.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Projects</a>
-                <a data-spa href="membership.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Membership</a>
-                <a href="https://pennstate.qualtrics.com/jfe/form/SV_dnEeR1NxltwiNhQ " style="background: #29b6f6; color: #fff; font-size: .78rem; padding: 5px 9px; border-radius: 4px; font-weight: bold; margin-left: 6px;">Join IAB →</a>
-            </div>
+<nav>
+    <div class="inn" style="display: flex; align-items: center; justify-content: space-between; height: 56px; flex-wrap: wrap; gap: 8px;">
+        <a data-spa href="index.html" style="color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: .5px; text-decoration: none;">
+            CRES<sup>2</sup>T
+        </a>
+        <div style="display: flex; gap: 3px; flex-wrap: wrap; align-items: center;">
+            <a data-spa href="mission.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Mission</a>
+            <a data-spa href="research.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Research</a>
+            <a data-spa href="team.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Team</a>
+            <a data-spa href="facilities.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Facilities</a>
+            <a data-spa href="benefits.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Benefits</a>
+            <a data-spa href="projects.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Projects</a>
+            <a data-spa href="membership.html" style="color: rgba(255,255,255,.82); font-size: .78rem; padding: 5px 9px; border-radius: 4px;">Membership</a>
+            
+            <!-- Apple-style dark mode toggle -->
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+                <span class="toggle-track">
+                    <span class="toggle-thumb"></span>
+                    <span class="toggle-icons">
+                        <span class="icon-sun">☀️</span>
+                        <span class="icon-moon">🌙</span>
+                    </span>
+                </span>
+            </button>
+            
+            <a href="https://pennstate.qualtrics.com/jfe/form/SV_dnEeR1NxltwiNhQ" style="background: #29b6f6; color: #fff; font-size: .78rem; padding: 5px 9px; border-radius: 4px; font-weight: bold; margin-left: 6px;">Join IAB →</a>
         </div>
-    </nav>
+    </div>
+</nav>
 <div id="cw">
 <div style="background: linear-gradient(0deg,#0d2366 0%,#1a3a7c 55%,#0d5070 100%); padding: 60px 0 60px;">
 <div class="inn" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
@@ -560,62 +414,7 @@ Currently in the <strong>Planning Grant</strong> phase. We need ~50 potential IA
         <div style="font-size: .75rem; color: rgba(255,255,255,.35);">Penn State · Purdue · Texas A&amp;M · NSF IUCRC</div>
     </div>
 </footer>
-<!-- 👇 SPA SCRIPT GOES HERE 👇 -->
-<script>
-    (function() {
-        // Intercept clicks on links with data-spa
-        document.addEventListener('click', function(e) {
-            const link = e.target.closest('a[data-spa]');
-            if (!link) return;
 
-            const url = link.getAttribute('href');
-            if (!url || url.startsWith('#') || url.startsWith('http')) return;
-
-            e.preventDefault();
-            navigateTo(url);
-        });
-
-        // Handle browser back/forward buttons
-        window.addEventListener('popstate', function() {
-            navigateTo(window.location.pathname, true);
-        });
-
-        function navigateTo(url, isPopState = false) {
-            const container = document.getElementById('cw');
-            container.style.opacity = '0.5';
-
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) throw new Error('Page not found');
-                    return response.text();
-                })
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const newContent = doc.getElementById('cw');
-
-                    if (newContent) {
-                        container.innerHTML = newContent.innerHTML;
-                    } else {
-                        // Fallback: if no #cw, use the whole body
-                        container.innerHTML = doc.body.innerHTML;
-                    }
-
-                    if (!isPopState) {
-                        window.history.pushState({}, '', url);
-                    }
-
-                    container.style.opacity = '1';
-                    // Scroll to top when navigating
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                })
-                .catch(err => {
-                    console.error('Navigation failed:', err);
-                    container.innerHTML = `<p style="padding:40px;text-align:center;color:red;">Failed to load page. <a href="${url}">Refresh to try again</a>.</p>`;
-                    container.style.opacity = '1';
-                });
-            }
-        })();
-    </script>
+<script src="script.js"> </script>
 </body>
 </html>

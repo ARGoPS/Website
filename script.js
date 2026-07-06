@@ -84,3 +84,21 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         document.documentElement.setAttribute('data-theme', theme);
     }
 });
+
+// ===== PAGE LOAD ANIMATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Add fade-in class to main content
+    const mainContent = document.getElementById('cw');
+    if (mainContent) {
+        mainContent.style.opacity = '0';
+        mainContent.style.transition = 'opacity 0.8s ease';
+        setTimeout(() => {
+            mainContent.style.opacity = '1';
+        }, 100);
+    }
+    
+    // Add stagger animation to cards
+    document.querySelectorAll('.fade-in-stagger').forEach(container => {
+        container.classList.add('fade-in-stagger');
+    });
+});

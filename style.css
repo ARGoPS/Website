@@ -167,8 +167,8 @@ footer {
     align-items: center;
     justify-content: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    width: 36px;
-    height: 36px;
+    width: 46px;
+    height: 26px;
     border-radius: 50%;
 }
 .theme-toggle:hover { background: rgba(255,255,255,0.08); transform: scale(1.02); }
@@ -706,4 +706,41 @@ footer {
     .toggle-icons span {
         font-size: 9px;
     }
+}
+
+/* Navigation button templates */
+.nav-button{
+    color: rgba(255,255,255,0.7);
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 6px; 
+    text-decoration: none; 
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover{
+    text-decoration: underline;
+}
+
+/* Publication dropdown templates */
+.publication-dropdown {
+    flex: 1 1 280px; 
+    max-width: 320px;  
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 30px rgba(0,0,0,.12); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    text-align: center;
+}
+
+/* Professor templates in Teams */
+.professor-card{
+    flex: 1 1 280px; 
+    max-width: 320px; 
+    background: #fff; 
+    border-radius: 16px; 
+    overflow: hidden; 
+    box-shadow: 0 8px 30px rgba(0,0,0,.12); 
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    text-align: center;
 }

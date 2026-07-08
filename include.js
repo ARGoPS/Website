@@ -12,6 +12,7 @@ async function loadInclude(id, file) {
 
 document.addEventListener('DOMContentLoaded', async () => {
     await Promise.all([
+        loadInclude('team-placeholder', 'team.html'),
         loadInclude('nav-placeholder', 'nav.html'),
         loadInclude('footer-placeholder', 'footer.html')
     ]);
